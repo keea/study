@@ -1,35 +1,35 @@
 /*
-* µµ½º°ÔÀÓ
+* ë„ìŠ¤ê²Œì„
 * @date     Mon Mar 27 18:53:51 2017
-* @author   °­Èñ¾Æ
+* @author   í¬ì•„
 */
 
 #include<stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
-//ÇÔ¼öÁ¤ÀÇ
-void init(); //°ÔÀÓµ¿ÀÛ(¹«ÇÑ¹İº¹)
-int MonInfo(int atk); //¸ó½ºÅÍ Á¤º¸
-int RandAtk(); //¸ó½ºÅÍ ÇÃ·¹ÀÌ¾î ·£´ı °ø°İ·Â
-void atkPlayer(); //ÇÃ·¹ÀÌ¾î °ø°İ½Ã
-void DisplayHp(int hp, int flag); //hp¹Ù¸¦ º¸¿©ÁØ´Ù
-int PlayerInfo(int atk); //ÇÃ·¹ÀÌ¾î Á¤º¸
-void atkMon(); //¸ó½ºÅÍ °ø°İ½Ã
-void HealPlayer(); //ÇÃ·¹ÀÌ¾î È¸º¹
+//í•¨ìˆ˜ì •ì˜
+void init(); //ê²Œì„ë™ì‘(ë¬´í•œë°˜ë³µ)
+int MonInfo(int atk); //ëª¬ìŠ¤í„° ì •ë³´
+int RandAtk(); //ëª¬ìŠ¤í„° í”Œë ˆì´ì–´ ëœë¤ ê³µê²©ë ¥
+void atkPlayer(); //í”Œë ˆì´ì–´ ê³µê²©ì‹œ
+void DisplayHp(int hp, int flag); //hpë°”ë¥¼ ë³´ì—¬ì¤€ë‹¤
+int PlayerInfo(int atk); //í”Œë ˆì´ì–´ ì •ë³´
+void atkMon(); //ëª¬ìŠ¤í„° ê³µê²©ì‹œ
+void HealPlayer(); //í”Œë ˆì´ì–´ íšŒë³µ
 
 
 void main() {
 	srand(time(NULL));
-	printf("°ÔÀÓ Á¾·á(Q)\r\n");
-	printf("¸ó½ºÅÍ¸¦ ¸¸³µ½À´Ï´Ù.\r\n");
+	printf("ê²Œì„ ì¢…ë£Œ(Q)\r\n");
+	printf("ëª¬ìŠ¤í„°ë¥¼ ë§Œë‚¬ìŠµë‹ˆë‹¤.\r\n");
 	DisplayHp(MonInfo(0), 1);
 	DisplayHp(PlayerInfo(0), 0);
 	init();
 }
 
 /*
-* °ÔÀÓµ¿ÀÛ(¹«ÇÑ¹İº¹)
+* ê²Œì„ë™ì‘(ë¬´í•œë°˜ë³µ)
 * @param 
 * @return
 * @date   Mon Mar 27 18:56:00 2017
@@ -38,7 +38,7 @@ void init() {
 	char commend;
 	while (true)
 	{
-		printf("1 - °ø°İ 2 - HPÈ¸º¹ : \r\n");
+		printf("1 - ê³µê²© 2 - HPíšŒë³µ : \r\n");
 		scanf(" %c", &commend);
 		if (commend == '1') { 
 			atkPlayer();
@@ -50,7 +50,7 @@ void init() {
 			printf("\r\n");
 			atkMon();
 		}
-		else if (commend == 'Q') //qÀÔ·Â½Ã Á¾·á
+		else if (commend == 'Q') //qì…ë ¥ì‹œ ì¢…ë£Œ
 		{
 			exit(0);
 		}
@@ -58,69 +58,69 @@ void init() {
 } 
 
 /*
-* ÇÃ·¹ÀÌ¾î°¡ ¸ó½ºÅÍ °ø°İ½Ã µ¿ÀÛ
+* í”Œë ˆì´ì–´ê°€ ëª¬ìŠ¤í„° ê³µê²©ì‹œ ë™ì‘
 * @param
 * @return
 * @date   Mon Mar 27 19:12:05 2017
 */
 void atkPlayer() {
 	int atk = RandAtk();
-	printf("ÇÃ·¹ÀÌ¾î°¡ °ø°İÀ» Çß½À´Ï´Ù.\r\n%d µ¥¹ÌÁö¸¦ ÁÖ¾ú½À´Ï´Ù.\r\n", atk);
+	printf("í”Œë ˆì´ì–´ê°€ ê³µê²©ì„ í–ˆìŠµë‹ˆë‹¤.\r\n%d ë°ë¯¸ì§€ë¥¼ ì£¼ì—ˆìŠµë‹ˆë‹¤.\r\n", atk);
 	int monHP= MonInfo(atk);
 	DisplayHp(monHP, 1);
 	if (monHP <= 0) {
-		printf("´ç½ÅÀº ¸ó½ºÅÍ¿Í ½Î¿ö ½Â¸®¸¦ Çß½À´Ï´Ù.\r\n\r\n");
+		printf("ë‹¹ì‹ ì€ ëª¬ìŠ¤í„°ì™€ ì‹¸ì›Œ ìŠ¹ë¦¬ë¥¼ í–ˆìŠµë‹ˆë‹¤.\r\n\r\n");
 		exit(0);
 	}
 }
 
 /*
-* ÇÃ·¹ÀÌ¾î HP È¸º¹
+* í”Œë ˆì´ì–´ HP íšŒë³µ
 * @param
 * @return
 * @date   Mon Mar 27 19:54:02 2017
 */
 void HealPlayer() {
 	int heal = 3;
-	printf("ÇÃ·¹ÀÌ¾î´Â È¸º¹À» »ç¿ëÇß½À´Ï´Ù. \r\nHP %dÀÌ È¸º¹µÇ¾ú½À´Ï´Ù.\r\n", heal);
+	printf("í”Œë ˆì´ì–´ëŠ” íšŒë³µì„ ì‚¬ìš©í–ˆìŠµë‹ˆë‹¤. \r\nHP %dì´ íšŒë³µë˜ì—ˆìŠµë‹ˆë‹¤.\r\n", heal);
 	int playerHp = PlayerInfo(heal);
 	DisplayHp(playerHp, 0);
 }
 
 
 /*
-* ¸ó½ºÅÍ°¡ ÇÃ·¹ÀÌ¾î °ø°İ
+* ëª¬ìŠ¤í„°ê°€ í”Œë ˆì´ì–´ ê³µê²©
 * @param
 * @return
 * @date   Mon Mar 27 19:31:04 2017
 */
 void atkMon() {
-	printf("¸ó½ºÅÍ°¡ °ø°İÀ» ½ÃµµÇß½À´Ï´Ù.\r\n");
+	printf("ëª¬ìŠ¤í„°ê°€ ê³µê²©ì„ ì‹œë„í–ˆìŠµë‹ˆë‹¤.\r\n");
 	int isDef = rand() % 7;
-	if (isDef == 0) {//¹æ¾î½Ã
-		printf("ÇÃ·¹ÀÌ¾î´Â ¼º°øÀûÀ¸·Î ¹æ¾îÇß½À´Ï´Ù.\r\n");
+	if (isDef == 0) {//ë°©ì–´ì‹œ
+		printf("í”Œë ˆì´ì–´ëŠ” ì„±ê³µì ìœ¼ë¡œ ë°©ì–´í–ˆìŠµë‹ˆë‹¤.\r\n");
 		int playerHp = PlayerInfo(0);
 		DisplayHp(playerHp, 0);
 	}
-	else {//¹æ¾î½ÇÆĞ
+	else {//ë°©ì–´ì‹¤íŒ¨
 		int damage = RandAtk();
 		int atk = RandAtk();
 		int playerHp = PlayerInfo(atk);
 
-		printf("¹æ¾î¿¡ ½ÇÆĞÇß½À´Ï´Ù.\r\n%d µ¥¹ÌÁö¸¦ ¹Ş¾Ò½À´Ï´Ù..\r\n", atk);
+		printf("ë°©ì–´ì— ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.\r\n%d ë°ë¯¸ì§€ë¥¼ ë°›ì•˜ìŠµë‹ˆë‹¤..\r\n", atk);
 		DisplayHp(playerHp, 0);
 
 		if (playerHp <= 0) {
-			printf("´ç½ÅÀº ¸ó½ºÅÍ¿¡°Ô ÆĞ¹èÇß½À´Ï´Ù.\r\n");
+			printf("ë‹¹ì‹ ì€ ëª¬ìŠ¤í„°ì—ê²Œ íŒ¨ë°°í–ˆìŠµë‹ˆë‹¤.\r\n");
 			exit(0);
 		}
 	}
 }
 
 /*
-* ¸ó½ºÅÍÀÇ Á¤º¸¸¦ ¹İÈ¯ÇÑ´Ù.
-* @param  º¯È­°ª
-* @return ¸ó½ºÅÍ hp
+* ëª¬ìŠ¤í„°ì˜ ì •ë³´ë¥¼ ë°˜í™˜í•œë‹¤.
+* @param  ë³€í™”ê°’
+* @return ëª¬ìŠ¤í„° hp
 * @date   Mon Mar 27 19:05:41 2017
 */
 int MonInfo(int atk) {
@@ -130,9 +130,9 @@ int MonInfo(int atk) {
 }
 
 /*
-* ÇÃ·¹ÀÌ¾îÀÇ Á¤º¸¸¦ ¹İÈ¯ÇÑ´Ù.
-* @param  º¯È­°ª
-* @return ÇÃ·¹ÀÌ¾î hp
+* í”Œë ˆì´ì–´ì˜ ì •ë³´ë¥¼ ë°˜í™˜í•œë‹¤.
+* @param  ë³€í™”ê°’
+* @return í”Œë ˆì´ì–´ hp
 * @date   Mon Mar 27 19:05:41 2017
 */
 int PlayerInfo(int atk) {
@@ -145,8 +145,8 @@ int PlayerInfo(int atk) {
 }
 
 /*
-* HP¸¦ È­¸é»ó¿¡ º¸¿©ÁØ´Ù.
-* @param  hp(º¸¿©ÁÙ hp), flag(0=ÇÃ·¹ÀÌ¾î, 1=¸ó½ºÅÍ)
+* HPë¥¼ í™”ë©´ìƒì— ë³´ì—¬ì¤€ë‹¤.
+* @param  hp(ë³´ì—¬ì¤„ hp), flag(0=í”Œë ˆì´ì–´, 1=ëª¬ìŠ¤í„°)
 * @return 
 * @date   Mon Mar 27 19:29:11 2017
 */
@@ -167,9 +167,9 @@ void DisplayHp(int hp, int flag) {
 
 
 /*
-* °ø°İ·ÂÀ» ¹İÈ¯ÇÑ´Ù.
+* ê³µê²©ë ¥ì„ ë°˜í™˜í•œë‹¤.
 * @param
-* @return °ø°İ°ª ¹İÈ¯
+* @return ê³µê²©ê°’ ë°˜í™˜
 * @date   Mon Mar 27 18:58:32 2017
 */
 int RandAtk() {
