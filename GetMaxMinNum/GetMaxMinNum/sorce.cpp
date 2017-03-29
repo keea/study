@@ -10,13 +10,11 @@
 
 
 void main() {
-	int num; 
 	int arr[5];
 
 	for (int i = 0; i < 5; i++) {
 		printf("%i번째 값을 입력해주세요 : ", i+1);
-		scanf("%d", &num);
-		arr[i] = num;
+		scanf("%d", &arr[i]);
 	}
 
 	int maxNum = 0; //최댓값
