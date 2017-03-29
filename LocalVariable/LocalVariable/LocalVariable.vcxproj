@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{2C74AC34-919C-45E2-AC05-673209DE6978}</ProjectGuid>
+    <ProjectGuid>{8446D875-AB4F-4C52-BE9F-667EE192A9CE}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>LocalVariable</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
@@ -142,7 +142,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="소스.cpp" />
+    <ClCompile Include="sorce.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

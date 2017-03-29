@@ -16,7 +16,7 @@ int main() {
 	SimpleFuncTwo();
 	printf("main num: %d \r\n", num);
 	return 0; //main의 num이 유효한 마지막 문장
- }
+}
 
 int SimpleFuncOne() {
 	int num = 10; //이후부터 SimpleFuncOne의 num 유효
