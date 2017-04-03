@@ -1,8 +1,8 @@
 /*
-* ¿­Ç÷ CÇÁ·Î±×·¡¹Ö p279
-* º¯¼ö°ªÀ» ¹Ù²Ù´Â ÇÔ¼ö
+* ì—´í˜ˆ Cí”„ë¡œê·¸ë˜ë° p279
+* ë³€ìˆ˜ê°’ì„ ë°”ê¾¸ëŠ” í•¨ìˆ˜
 * @date     Thu Mar 30 14:30:51 2017
-* @author   Èñ¾Æ
+* @author   í¬ì•„
 */
 
 #include <stdio.h>
@@ -13,20 +13,20 @@ void UsePoint(int * pnum1, int * pnum2);
 void main() {
 	int num1 = 100, num2 = 100;
 	UnusePoint(num1, num2);
-	printf("Æ÷ÀÎÆ® »ç¿ëÇÏÁö ¾Ê´Â °æ¿ì num1 : %d, num2 : %d\r\n", num1, num2);
+	printf("í¬ì¸íŠ¸ ì‚¬ìš©í•˜ì§€ ì•ŠëŠ” ê²½ìš° num1 : %d, num2 : %d\r\n", num1, num2);
 
 	UsePoint(&num1, &num2);
 	printf("%d\r\n", &num1);
-	printf("Æ÷ÀÎÆ® »ç¿ëÇÑ °æ¿ì num1 : %d, num2 : %d\r\n", num1, num2);
+	printf("í¬ì¸íŠ¸ ì‚¬ìš©í•œ ê²½ìš° num1 : %d, num2 : %d\r\n", num1, num2);
 }
 
-void UnusePoint(int pnum1, int pnum2) { //num1, num2ÀÇ º¯¼ö¸¦ º¸³»Áö ¾Ê°í º¯¼öÀÇ °ª¸¸ º¸³¿.
+void UnUsePoint(int pnum1, int pnum2) { //num1, num2ì˜ ë³€ìˆ˜ë¥¼ ë³´ë‚´ì§€ ì•Šê³  ë³€ìˆ˜ì˜ ê°’ë§Œ ë³´ëƒ„.
 	pnum1 += 30; 
 	pnum2 -= 30;
-	//Áö¿ªº¯¼öÀÎ ¸Å°³º¯¼öÀÇ °ª¸¸ º¯°æ. num1,num2ÀÇ °ªÀº º¯ÇÏÁö ¾ÊÀ½.
+	//ì§€ì—­ë³€ìˆ˜ì¸ ë§¤ê°œë³€ìˆ˜ì˜ ê°’ë§Œ ë³€ê²½. num1,num2ì˜ ê°’ì€ ë³€í•˜ì§€ ì•ŠìŒ.
 } 
 
 void UsePoint(int * pnum1, int * pnum2) {
 	*pnum1 += 30;
-	*pnum2 -= 30; //ÀÌ ÁÖ¼Ò¿¡ ÀÖ´Â °ªÀ» ¹Ù²Ş.
+	*pnum2 -= 30; //ì´ ì£¼ì†Œì— ìˆëŠ” ê°’ì„ ë°”ê¿ˆ.
 }
