@@ -12,7 +12,7 @@ void UsePoint(int * pnum1, int * pnum2);
 
 void main() {
 	int num1 = 100, num2 = 100;
-	UnusePoint(num1, num2);
+	UnUsePoint(num1, num2);
 	printf("포인트 사용하지 않는 경우 num1 : %d, num2 : %d\r\n", num1, num2);
 
 	UsePoint(&num1, &num2);
