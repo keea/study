@@ -7,7 +7,7 @@
 
 #include <stdio.h>
 
-void UnusePoint(int pnum1, int pnum2);
+void UnUsePoint(int pnum1, int pnum2);
 void UsePoint(int * pnum1, int * pnum2);
 
 void main() {
