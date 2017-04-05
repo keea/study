@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-//함수정의
+//함수선언
 void init(); //게임동작(무한반복)
 int MonInfo(int atk); //몬스터 정보
 int RandAtk(); //몬스터 플레이어 랜덤 공격력
