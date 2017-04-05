@@ -1,15 +1,15 @@
 /*
-* ÇÑ¹ø¿¡ ³¡³»´Â CÇÁ·Î±×·¡¹Ö 200Á¦ 56p 94¹ø ¹®Á¦
-* ¾ß±¸°ÔÀÓ
+* í•œë²ˆì— ëë‚´ëŠ” Cí”„ë¡œê·¸ë˜ë° 200ì œ 56p 94ë²ˆ ë¬¸ì œ
+* ì•¼êµ¬ê²Œì„
 * @date     Fri Mar 24 09:36:34 2017
-* @author   Èñ¾Æ
+* @author   í¬ì•„
 */
 
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
 
-//ÇÔ¼öÁ¤ÀÇ
+//í•¨ìˆ˜ì„ ì–¸
 void show(int correct);
 int getStrike(int inputNum, int correct);
 int getCipher(int num, int cipher);
@@ -24,22 +24,22 @@ void main() {
 }
 
 /*
-* °ÔÀÓÀ» È­¸é¿¡ Ãâ·ÂÇÑ´Ù.
-* @param  inputNum(Á¤´ä°ª)
+* ê²Œì„ì„ í™”ë©´ì— ì¶œë ¥í•œë‹¤.
+* @param  inputNum(ì •ë‹µê°’)
 * @return 
 * @date   Fri Mar 24 10:13:43 2017
 */
 void show(int correct) {
 	bool isClear = false;
 	for (int i = 10; i > 0; i--) {
-		int inputNum; //ÀÔ·ÂÇÑ °ª
-		printf("%d¹øÀÇ ±âÈ¸°¡ ³²¾Ò½À´Ï´Ù. 3ÀÚ¸® ¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ", i);
+		int inputNum; //ì…ë ¥í•œ ê°’
+		printf("%dë²ˆì˜ ê¸°íšŒê°€ ë‚¨ì•˜ìŠµë‹ˆë‹¤. 3ìë¦¬ ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”: ", i);
 		scanf("%d", &inputNum);
 
 		int nStrike = getStrike(inputNum, correct);
 		int nBall = getBall(inputNum, correct);
 
-		printf("%d ½ºÆ®¶óÀÌÅ©, %d º¼ÀÔ´Ï´Ù.\r\n", nStrike, nBall);
+		printf("%d ìŠ¤íŠ¸ë¼ì´í¬, %d ë³¼ì…ë‹ˆë‹¤.\r\n", nStrike, nBall);
 
 		if (nStrike == 3) {
 			isClear = true;
@@ -50,32 +50,32 @@ void show(int correct) {
 	printf("\r\n");
 
 	if (isClear) {
-		printf("Á¤´äÀº %d ÀÔ´Ï´Ù.\r\n", correct);
-		printf("ÃàÇÏÇÕ´Ï´Ù. ´ç½ÅÀº Á¤¸» ÃµÀç³×¿ä.\r\n");
+		printf("ì •ë‹µì€ %d ì…ë‹ˆë‹¤.\r\n", correct);
+		printf("ì¶•í•˜í•©ë‹ˆë‹¤. ë‹¹ì‹ ì€ ì •ë§ ì²œì¬ë„¤ìš”.\r\n");
 	}
 	else {
-		printf("±âÈ¸¸¦ ¸ğµÎ »ç¿ëÇÏ¼Ì½À´Ï´Ù.\r\n");
-		printf("Á¤´äÀº %d ÀÔ´Ï´Ù.\r\n", correct);
+		printf("ê¸°íšŒë¥¼ ëª¨ë‘ ì‚¬ìš©í•˜ì…¨ìŠµë‹ˆë‹¤.\r\n");
+		printf("ì •ë‹µì€ %d ì…ë‹ˆë‹¤.\r\n", correct);
 	}
 
 }
 
 /*
-* º¼À» ÆÇ´ÜÇÏ°í º¼ °¹¼ö¸¦ ¸®ÅÏ½ÃÅ²´Ù.
-* @param inputNum(ÀÔ·Â°ª) , correct(Á¤´ä)
-* @return nStrike(º¼ °¹¼ö)
+* ë³¼ì„ íŒë‹¨í•˜ê³  ë³¼ ê°¯ìˆ˜ë¥¼ ë¦¬í„´ì‹œí‚¨ë‹¤.
+* @param inputNum(ì…ë ¥ê°’) , correct(ì •ë‹µ)
+* @return nStrike(ë³¼ ê°¯ìˆ˜)
 * @date   Fri Mar 24 14:16:59 2017
 */
 int getBall(int inputNum, int correct) {
 	int nBall = 0;
 
-	int corr_h = getCipher(correct, 100); //Á¤´äÀÇ ¹éÀÇ ÀÚ¸®
-	int corr_t = getCipher(correct, 10); //Á¤´äÀÇ ½ÊÀÇ ÀÚ¸®
-	int corr_o = getCipher(correct, 1); //Á¤´äÀÇ ÀÏÀÇ ÀÚ¸®
+	int corr_h = getCipher(correct, 100); //ì •ë‹µì˜ ë°±ì˜ ìë¦¬
+	int corr_t = getCipher(correct, 10); //ì •ë‹µì˜ ì‹­ì˜ ìë¦¬
+	int corr_o = getCipher(correct, 1); //ì •ë‹µì˜ ì¼ì˜ ìë¦¬
 
-	int input_h = getCipher(inputNum, 100); //ÀÔ·Â°ªÀÇ ¹éÀÇÀÚ¸®
-	int input_t = getCipher(inputNum, 10); //ÀÔ·Â°ªÀÇ ½ÊÀÇÀÚ¸®
-	int input_o = getCipher(inputNum, 1); //ÀÔ·Â°ªÀÇ ÀÏÀÇÀÚ¸®
+	int input_h = getCipher(inputNum, 100); //ì…ë ¥ê°’ì˜ ë°±ì˜ìë¦¬
+	int input_t = getCipher(inputNum, 10); //ì…ë ¥ê°’ì˜ ì‹­ì˜ìë¦¬
+	int input_o = getCipher(inputNum, 1); //ì…ë ¥ê°’ì˜ ì¼ì˜ìë¦¬
 
 	if (input_h == input_t == input_o) {
 		nBall++;
@@ -100,9 +100,9 @@ int getBall(int inputNum, int correct) {
 }
 
 /*
-* ½ºÆ®¶óÀÌÅ©¸¦ ÆÇ´ÜÇÏ°í ½ºÆ®¶óÀÌÅ© °¹¼ö¸¦ ¸®ÅÏ½ÃÅ²´Ù.
-* @param inputNum(ÀÔ·Â°ª) , correct(Á¤´ä)
-* @return nStrike(½ºÆ®¶óÀÌÅ© °¹¼ö)
+* ìŠ¤íŠ¸ë¼ì´í¬ë¥¼ íŒë‹¨í•˜ê³  ìŠ¤íŠ¸ë¼ì´í¬ ê°¯ìˆ˜ë¥¼ ë¦¬í„´ì‹œí‚¨ë‹¤.
+* @param inputNum(ì…ë ¥ê°’) , correct(ì •ë‹µ)
+* @return nStrike(ìŠ¤íŠ¸ë¼ì´í¬ ê°¯ìˆ˜)
 * @date   Fri Mar 24 10:07:11 2017
 */
 int getStrike(int inputNum, int correct) {
@@ -125,9 +125,9 @@ int getStrike(int inputNum, int correct) {
 }
 
 /*
-* ¿øÇÏ´Â ÀÚ¸´¼öÀÇ °ªÀ» ±¸ÇÑ´Ù.
-* @param num(¼ıÀÚ), cipher(ÀÚ¸´¼ö ´ÜÀ§)
-* @return ÀÚ¸´¼öÀÇ °ª
+* ì›í•˜ëŠ” ìë¦¿ìˆ˜ì˜ ê°’ì„ êµ¬í•œë‹¤.
+* @param num(ìˆ«ì), cipher(ìë¦¿ìˆ˜ ë‹¨ìœ„)
+* @return ìë¦¿ìˆ˜ì˜ ê°’
 * @date   Fri Mar 24 10:36:48 2017
 */
 int getCipher(int num, int cipher) {
