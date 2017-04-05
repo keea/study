@@ -1,33 +1,33 @@
 /*
-* ¿­Ç÷ cÇÁ·Î±×·¡¹Ö 222p
-* Áö¿ªº¯¼ö Æ¯¼º È®ÀÎ
+* ì—´í˜ˆ cí”„ë¡œê·¸ë˜ë° 222p
+* ì§€ì—­ë³€ìˆ˜ íŠ¹ì„± í™•ì¸
 * @date     Tue Mar 28 10:09:59 2017
-* @author   Èñ¾Æ
+* @author   í¬ì•„
 */
 
-//ÇÔ¼öÁ¤ÀÇ
+//í•¨ìˆ˜ì„ ì–¸
 int SimpleFuncOne();
 int SimpleFuncTwo();
 
 #include <stdio.h>
 int main() {
-	int num = 17; //ÀÌÈÄºÎÅÍ mainÀÇ num À¯È¿
+	int num = 17; //ì´í›„ë¶€í„° mainì˜ num ìœ íš¨
 	SimpleFuncOne();
 	SimpleFuncTwo();
 	printf("main num: %d \r\n", num);
-	return 0; //mainÀÇ numÀÌ À¯È¿ÇÑ ¸¶Áö¸· ¹®Àå
+	return 0; //mainì˜ numì´ ìœ íš¨í•œ ë§ˆì§€ë§‰ ë¬¸ì¥
 }
 
 int SimpleFuncOne() {
-	int num = 10; //ÀÌÈÄºÎÅÍ SimpleFuncOneÀÇ num À¯È¿
+	int num = 10; //ì´í›„ë¶€í„° SimpleFuncOneì˜ num ìœ íš¨
 	num++;
 	printf("simpleFuncOne num: %d \r\n", num);
-	return 0; //SimpleFuncOneÀÇ numÀÌ À¯È¿ÇÑ ¸¶Áö¸· ¹®Àå
+	return 0; //SimpleFuncOneì˜ numì´ ìœ íš¨í•œ ë§ˆì§€ë§‰ ë¬¸ì¥
 }
 
 int SimpleFuncTwo() {
-	int num1 = 20; //ÀÌÈÄºÎÅÍ num1 À¯È¿
-	int num2 = 30; //ÀÌÈÄºÎÅÍ num2 À¯È¿
+	int num1 = 20; //ì´í›„ë¶€í„° num1 ìœ íš¨
+	int num2 = 30; //ì´í›„ë¶€í„° num2 ìœ íš¨
 	num1++, num2--;
 	printf("num1 & num2 : %d %d\r\n", num1, num2);
 	return 0;
