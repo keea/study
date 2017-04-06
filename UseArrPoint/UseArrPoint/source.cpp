@@ -17,7 +17,7 @@ void main() {
 	//모든 배열요소의 값을 2씩 증가
 	int length = sizeof(arr) / sizeof(int);
 	for (int i = 0; i < length; i++) {
-		*(ptr + i) += 2;
+		*(ptr++) += 2;
 	}
 
 	for (int j = 0; j < length; j++) {
