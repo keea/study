@@ -43,10 +43,12 @@ public:
 
 void main() {
 	K_Class kc1;
-	//K_Class kc2(kc1); //복사 생성자 호출
-
 	K_Class * pkc = new K_Class;
 
+	/* 기본 클래스인 Uncopyable의 복사 생성자와 복사 대입 연산자는 private으로 선언되어 있으니,
+	   상속받은 K_Class에서 쓸 수 없게 됨.	*/
+
+	//K_Class kc2(kc1); //복사 생성자 호출
 	//kc1 = *pkc; //복사 대입 연산자 호출
 	_getch();
 }
